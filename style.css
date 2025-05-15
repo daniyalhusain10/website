@@ -1,0 +1,252 @@
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+.overlay {
+    background-color: #181818;
+    position: fixed;
+    z-index: 30;
+    top: -100%; /* Initially hidden above the viewport */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: top 0.3s ease-in-out; /* Smooth transition for sliding */
+
+}
+
+.container {
+    z-index: 999; /* Reduced from 999999 to avoid excessive values */
+}
+
+.half h1 {
+    z-index: 999;
+    position: absolute;
+}
+.web3forms-success {
+    color: #28a745;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.web3forms-error {
+    color: #dc3545;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+/* Ensure the main container is above other content but below the overlay when active */
+.main{
+    overflow-x: hidden;
+    pointer-events: none;
+}
+.circle{
+    position: fixed;
+     width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #181818;
+    pointer-events: none;
+}
+     
+     .menu-container:hover .mline.top1 {
+            transform: translateY(-100%);
+        }
+        .menu-container:hover .mline:not(.top1) {
+            transform: translateY(-100%);
+        }
+        .heart{
+            animation: beat 1s ease infinite;
+        }
+        @keyframes beat{
+            0%{transform: scale(0.90); opacity: 1;}
+            /* 50%{transform: scale(0.75); opacity: 1;} */
+            /* 50%{transform: scale(1); opacity: 1;} */
+            100%{transform: scale(1); opacity: 1;}
+
+        }
+          .iparent{
+    transition: all .30s ease;
+
+  }
+  .iparent i{
+    border-radius: 50%;
+    padding-top: 12px;
+    padding-bottom: 12px;  
+    padding-left: 12px;
+    padding-right: 12px;
+    transition: all .20s ease;
+    transform: scale(1);
+  }
+  .iparent a i:hover{
+    color: white;
+    background-color: black;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+     .form {
+            background: linear-gradient(
+                -90deg,
+               #E6E6FA, 
+                #e0d1e0,
+                #f1dcf1, 
+                #ffffff,
+                #E6E6FA
+            );
+            background-size: 200% 100%; 
+            animation: gradientShift 20s ease infinite; 
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 200% 50%; /* Shift to create loop */
+            }
+        }
+   .but1{
+     transition: all .20s ease;
+    }
+    .but1:hover{
+        color: white;
+        background: #f1b694;
+    }
+      .but{
+     transition: all .20s ease;
+    }
+    .but:hover{
+        color: white;
+        background: #1e293bcc;
+        outline-color: white;
+       
+    }
+
+
+
+
+
+
+
+
+/* From uiverse.io by @Ali-Tahmazi99 */
+#button {
+ display: inline-block;
+ width: 150px;
+ height: 55px;
+ border-radius: 10px;
+ border: 1px solid black;
+ position: relative;
+ overflow: hidden;
+ transition: all 0.5s ease-in;
+ z-index: 1;
+ 
+}
+
+#button::before,
+#button::after {
+ content: '';
+ position: absolute;
+ top: 0;
+ width: 0;
+ height: 100%;
+ transform: skew(15deg);
+ transition: all 0.5s;
+ overflow: hidden;
+ z-index: -1;
+}
+
+#button::before {
+ left: -10px;
+ background: #FF5C00;
+}
+
+#button::after {
+ right: -10px;
+ background: black;
+}
+
+#button:hover::before,
+#button:hover::after {
+ width: 58%;
+}
+
+#button:hover span {
+ color: white;
+ transition: 0.3s;
+}
+#button:hover {
+ color: white;
+ transition: 0.3s;
+  border: 1px transparent;
+}
+
+#button span {
+ color: black;
+ font-size: 18px;
+ transition: all 0.3s ease-in;
+}
+
+/* button 2 */
+
+
+
+
+
+
+
+#button1{
+ display: inline-block;
+ width: 140px;
+ height: 55px;
+ border-radius: 10px;
+ border: 1px solid black;
+ position: relative;
+ overflow: hidden;
+ transition: all 0.5s ease-in;
+ z-index: 1;
+}
+
+#button1::before,
+#button1::after {
+ content: '';
+ position: absolute;
+ top: 0;
+ width: 0;
+ height: 100%;
+ transform: skew(15deg);
+ transition: all 0.5s;
+ overflow: hidden;
+ z-index: -1;
+}
+
+#button1::before {
+ left: -10px;
+ background: black;
+}
+
+#button1::after {
+ right: -10px;
+ background: #FF5C00;
+}
+
+#button1:hover::before,
+#button1:hover::after {
+ width: 58%;
+}
+
+#button1:hover span {
+ color: white;
+ transition: 0.3s;
+}
+#button1:hover {
+ color: white;
+ transition: 0.3s;
+
+}
+
+#button1 span {
+ color: black;
+ font-size: 18px;
+ transition: all 0.3s ease-in;
+}
