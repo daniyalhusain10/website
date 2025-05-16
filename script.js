@@ -51,7 +51,6 @@ const parentrimg = document.querySelector(".last img")
 const sun = document.querySelector(".sun")
 const sun1 = document.querySelector(".sun1")
 const lastone = document.querySelector(".lastone");
-const lastoneI = document.querySelector(".lastone I")
 
 const click = document.querySelector(".click")
 const overlay = document.querySelector(".overlay")
@@ -86,40 +85,30 @@ contact.addEventListener("click",()=>{
 
 
 lastone.addEventListener("mouseenter", ()=>{
-  parentrimg.style.transform = "Scale(1.1)"
-
+  parentrimg.style.transform = "Scale(1.05)"
+   sun.style.color ="#FFAA78"
    lastoneI.style.opacity = "100%"
 }) 
 lastone.addEventListener("mouseleave", ()=>{
   parentrimg.style.transform = "Scale(1)"
-
+sun.style.color ="white"
   lastoneI.style.opacity = "0%"
 }) 
 
 
 parentrimg.addEventListener("mouseenter", ()=>{
-  parentrimg.style.transform = "Scale(1.1)"
+  parentrimg.style.transform = "Scale(1.05)"
+   sun.style.color ="#FFAA78"
 
    lastoneI.style.opacity = "100%"
 
 }) 
 parentrimg.addEventListener("mouseleave", ()=>{
   parentrimg.style.transform = "Scale(1)"
+sun.style.color ="white"
 
     lastoneI.style.opacity = "0%"
 }) 
-
-imgparent.addEventListener("mouseenter",()=>{
- 
-  sun.style.borderColor = "white";
-  sun.style.width = "170px";
-  sun.style.color ="#ff8c4a";
-})
-imgparent.addEventListener("mouseleave",()=>{
-  sun.style.borderColor = "#FFFFFF";
-  sun.style.width = "20px"
-   sun.style.color = "white"
-})
 
 
 const redirectDiv = document.querySelector(".last")
@@ -172,12 +161,12 @@ window.addEventListener('load', () => {
 
 const projectsLink = document.querySelector("#projects");
 projectsLink.addEventListener("click", () => {
-    window.location.href = "#Projects";
+    window.location.href = "#projects";
 });
 
 const contactLink = document.querySelector("#lets-talk");
 contactLink.addEventListener("click", () => {
-    window.location.href = "https://mail.google.com/mail/u/0/#inbox?compose=new";
+    window.location.href = "https://web.whatsapp.com/";
 });
 
 const projects = document.querySelector("#projects")
@@ -318,11 +307,11 @@ gsap.from(".left1",{
   stagger:1,
   scrollTrigger:{
     trigger:".left1",
-    start: "top 110%",
+    start: "top 100%",
    duration: 3,
   // markers:true,
     scrub: 1,
-    end: "bottom 120%"
+    end: "bottom 100%"
   }
 }) 
 
@@ -336,11 +325,11 @@ gsap.from(".right2",{
   scrollTrigger:{
     x:0,
     trigger:".right2",
-    start: "top 100%",
+    start: "top 50%",
   duration: 3,
   // markers:true,
     scrub: 1,
-    end: "bottom 100%"
+    end: "bottom 60%"
   }
 }) 
 
