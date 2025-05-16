@@ -21,15 +21,15 @@ const coords = { x: 0, y: 0 };
 const circle = document.querySelector(".circle");
 
 // Skew ki intensity ko control karne ke liye factor
-const skewFactor = 0.1;
+const skewFactor = 0.060;
 
 function animateCircle() {
   circle.style.left = coords.x - 0 + "px"; // 12px circle ka half = 6
   circle.style.top = coords.y - 0 + "px";
 
   // Mouse ki movement ke adhar par skew calculate karein
-  const deltaX = coords.x - (circle.offsetLeft + 10);
-  const deltaY = coords.y - (circle.offsetTop + 10);
+  const deltaX = coords.x - (circle.offsetLeft + 1);
+  const deltaY = coords.y - (circle.offsetTop + 1);
 
   // Skew ko apply karein
   circle.style.transform = `translate(-50%, -50%) skewX(${deltaX * skewFactor}deg) skewY(${deltaY * skewFactor}deg)`;
@@ -52,6 +52,38 @@ const sun = document.querySelector(".sun")
 const sun1 = document.querySelector(".sun1")
 const lastone = document.querySelector(".lastone");
 const lastoneI = document.querySelector(".lastone I")
+
+const click = document.querySelector(".click")
+const overlay = document.querySelector(".overlay")
+const i  = document.querySelector(".ri-close-large-fill")
+const home  = document.querySelector(".home")
+const about  = document.querySelector(".about")
+const project  = document.querySelector(".project")
+const contact  = document.querySelector(".contact")
+
+
+click.addEventListener("click",()=>{
+  overlay.style.top = "-0vh"
+})
+i.addEventListener("click",()=>{
+  overlay.style.top = "-110vh"
+})
+home.addEventListener("click",()=>{
+  overlay.style.top = "-110vh"
+})
+about.addEventListener("click",()=>{
+  overlay.style.top = "-110vh"
+})
+project.addEventListener("click",()=>{
+  overlay.style.top = "-110vh"
+})
+contact.addEventListener("click",()=>{
+  overlay.style.top = "-110vh"
+})
+
+
+
+
 
 lastone.addEventListener("mouseenter", ()=>{
   parentrimg.style.transform = "Scale(1.1)"
@@ -100,32 +132,43 @@ githubIcon.addEventListener("click",()=>{
 window.location.href = "https://github.com/daniyalhusain10"
 })
 
+const nameInput = document.getElementById("nameInput");
+const emailInput = document.getElementById("emailInput");
+const messageInput = document.getElementById("messageInput");
+const typingGif = document.getElementById("typingGif");
+const submitButton = document.getElementById("submitButton"); 
 
-const sidebar = document.querySelector(".overlay");
-const menuButton = document.querySelector(".container button");
-const menuContainer = document.querySelector(".container");
-const sidebarLinks = document.querySelectorAll(".overlay a");
-const titleHeading = document.querySelector(".half h1");
+function checkInputs() {
+  if (
+    nameInput.value.length > 0 ||
+    emailInput.value.length > 0 ||
+    messageInput.value.length > 0
+  ) {
+    typingGif.style.display = "block";
+  } else {
+    typingGif.style.display = "none";
+  }
+}
 
-menuButton.addEventListener("click", () => {
-    const isOpen = sidebar.style.top === "0px";
-    sidebar.style.top = isOpen ? "-100%" : "0";
-    menuButton.innerHTML = isOpen ? "MENU" : "CLOSE";
-    menuButton.style.color = isOpen ? "black" : "white";
-    titleHeading.style.color = isOpen ? "black" : "white";
-    menuContainer.style.borderColor = isOpen ? "black" : "white";
+nameInput.addEventListener("input", checkInputs);
+emailInput.addEventListener("input", checkInputs);
+messageInput.addEventListener("input", checkInputs);
+
+
+
+window.addEventListener('load', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('formSubmitted') === 'true') {
+    nameInput.value = "";
+    emailInput.value = "";
+    messageInput.value = "";
+    typingGif.style.display = "none";
+    
+    const newUrl = window.location.pathname;
+    window.history.pushState({}, document.title, newUrl);
+  }
 });
 
-// Close sidebar on link click
-sidebarLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        sidebar.style.top = "-100%"; // Hide sidebar
-        menuButton.innerHTML = "MENU"; // Reset button text
-        menuButton.style.color = "black"; // Reset button color
-        titleHeading.style.color = "black"; // Reset heading color
-        menuContainer.style.borderColor = "black"; // Reset border color
-    });
-});
 
 const projectsLink = document.querySelector("#projects");
 projectsLink.addEventListener("click", () => {
@@ -269,7 +312,7 @@ gsap.from(".mywork", {
 gsap.set(".left1",{opacity : 1});
 gsap.from(".left1",{
    rotate: 10,
-  x:80,
+  x:10,
   opacity: 0,
   duration: 2,
   stagger:1,
@@ -285,7 +328,7 @@ gsap.from(".left1",{
 
 gsap.set(".right2",{opacity : 1});
 gsap.from(".right2",{
-  x: -80,
+  x: -10,
   opacity: 0,
   rotate: -10,
   duration: 3,
