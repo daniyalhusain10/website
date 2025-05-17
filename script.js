@@ -215,26 +215,30 @@ tl.from(".header", {
     opacity: 0,
     duration: 0.7,
   })
-  .from(".video", {
+ if (window.innerWidth > 768) {
+  // .from animation
+  gsap.from(".video", {
     y: 80,
     opacity: 0,
     duration: 0.7,
   });
 
-// Standalone ScrollTrigger animation for .video
-gsap.to(".video", {
-  width: "100vw",
-  scrollTrigger: {
-    trigger: ".video",
-    start: "top 80%",
-    end: "bottom 20%",
-    scrub: 0.5,
-     // Remove after debugging
-  },
-});
-
-
-
+  // ScrollTrigger .to animation
+  gsap.to(".video", {
+    width: "100vw",
+    scrollTrigger: {
+      trigger: ".video",
+      start: "top 70%",
+      end: "bottom 20%",
+      scrub: 0.5,
+    },
+  });
+} else {
+  // Reset styles for mobile
+  gsap.set(".video", {
+    clearProps: "all",
+  });
+}
 
 
 
