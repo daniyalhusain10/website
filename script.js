@@ -48,9 +48,10 @@ animateCircle();
 
 const imgparent = document.querySelector(".last")
 const parentrimg = document.querySelector(".last img")
+const parentrimge = document.querySelector(".laste img")
 const sun = document.querySelector(".sun")
+const sune = document.querySelector(".sune")
 const sun1 = document.querySelector(".sun1")
-const lastone = document.querySelector(".lastone");
 
 const click = document.querySelector(".click")
 const overlay = document.querySelector(".overlay")
@@ -83,16 +84,14 @@ contact.addEventListener("click",()=>{
 
 
 
-
+const lastone = document.querySelector(".lastone");
 lastone.addEventListener("mouseenter", ()=>{
   parentrimg.style.transform = "Scale(1.05)"
    sun.style.color ="#FFAA78"
-   lastoneI.style.opacity = "100%"
 }) 
 lastone.addEventListener("mouseleave", ()=>{
   parentrimg.style.transform = "Scale(1)"
 sun.style.color ="white"
-  lastoneI.style.opacity = "0%"
 }) 
 
 
@@ -100,21 +99,46 @@ parentrimg.addEventListener("mouseenter", ()=>{
   parentrimg.style.transform = "Scale(1.05)"
    sun.style.color ="#FFAA78"
 
-   lastoneI.style.opacity = "100%"
-
 }) 
 parentrimg.addEventListener("mouseleave", ()=>{
   parentrimg.style.transform = "Scale(1)"
 sun.style.color ="white"
-
-    lastoneI.style.opacity = "0%"
 }) 
-
 
 const redirectDiv = document.querySelector(".last")
 redirectDiv.addEventListener("click",()=>{
   window.location.href = "https://daniyalhusain10.github.io/sun-down/"
 })
+
+
+// end
+
+const lastonee = document.querySelector(".lastonee");
+lastonee.addEventListener("mouseenter", ()=>{
+  parentrimge.style.transform = "Scale(1.05)"
+   sune.style.color ="#FFAA78"
+}) 
+lastonee.addEventListener("mouseleave", ()=>{
+  parentrimge.style.transform = "Scale(1)"
+ sune.style.color ="white"
+}) 
+
+
+parentrimge.addEventListener("mouseenter", ()=>{
+  parentrimge.style.transform = "Scale(1.05)"
+   sune.style.color ="#FFAA78"
+}) 
+parentrimge.addEventListener("mouseleave", ()=>{
+  parentrimge.style.transform = "Scale(1)";
+   sune.style.color ="white"
+}) 
+
+const redirectDive = document.querySelector(".laste")
+redirectDive.addEventListener("click",()=>{
+  window.location.href = "https://daniyalhusain10.github.io/landing-page/"
+})
+
+
 
 const githubIcon =  document.querySelector(".githubIcon")
 githubIcon.addEventListener("click",()=>{
